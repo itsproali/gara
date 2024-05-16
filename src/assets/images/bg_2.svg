@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="499.444" height="721.085" viewBox="0 0 499.444 721.085">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_425" data-name="Rectangle 425" width="499.444" height="721.085" transform="translate(1414.551 1653.747)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_424" data-name="Rectangle 424" width="669.926" height="396.161" fill="#1f202b" stroke="#1f202b" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="cirlcles_Left" data-name="cirlcles Left" transform="translate(-1414.551 -1653.747)" opacity="0.81" clip-path="url(#clip-path)">
+    <g id="circles_bellow" data-name="circles bellow" transform="translate(1539.236 2360.301) rotate(-90)" opacity="0.39" clip-path="url(#clip-path-2)">
+      <g id="Circles_gara_bckgrnd" transform="translate(34.295 3.548)" opacity="0.25">
+        <circle id="Ellipse_226" data-name="Ellipse 226" cx="150.778" cy="150.778" r="150.778" transform="translate(150.187 150.187)" fill="none" stroke="#1f202b" stroke-width="6"/>
+        <circle id="Ellipse_227" data-name="Ellipse 227" cx="225.871" cy="225.871" r="225.871" transform="translate(75.093 75.093)" fill="none" stroke="#1f202b" stroke-width="6"/>
+        <circle id="Ellipse_228" data-name="Ellipse 228" cx="300.964" cy="300.964" r="300.964" transform="translate(0 0)" fill="none" stroke="#1f202b" stroke-width="6"/>
+      </g>
+    </g>
+  </g>
+</svg>
