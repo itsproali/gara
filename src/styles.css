@@ -3,12 +3,12 @@
 @tailwind utilities; /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-  font-family: "Gopher";
-  src: url("./assets/font/Gopher.otf");
+  font-family: "AdobeClean";
+  src: url("./assets/font/AdobeClean.otf");
 }
 
 body {
-  font-family: "Gopher", sans-serif;
+  font-family: "AdobeClean", sans-serif;
   background-color: #efeee9;
   min-height: 100vh;
 }

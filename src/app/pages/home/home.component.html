@@ -1,11 +1,57 @@
 <div class="min-h-screen">
-
   <div class="relative z-10">
+    <div class="container py-20">
+
+      <!-- Main Card -->
+      <div class="max-w-[1000px] mx-auto bg-[#FAFAFA] border-4 border-white w-full py-8 rounded-xl"
+        style="box-shadow: 0px 3px 6px #00000029">
+        <h3 class="text-[40px] text-center italic py-12">
+          <strong>Interview</strong> de la semaine
+        </h3>
+        <div class="w-full h-[1px] bg-[#707070] opacity-25"></div>
+
+        <div class="px-8 pt-6 flex flex-col gap-8">
+          <h2 class="font-black text-5xl leading-[60px] pr-16">
+            Découvrez Samba Diop, le talentueux motion designer derrière le
+            jeu Afro jungle
+          </h2>
+
+          <p class="text-lg">Samedi 20 Janvier 2024</p>
+          <div class="h-[480px] bg-[#BD0511] rounded-3xl relative">
+            <div class="absolute top-12 right-20 z-10">
+              <p class="text-5xl text-[#F5F5F5] opacity-40 font-bold">LOGO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom News Carousel -->
+      <div class="mt-28">
+        <h3 class="text-[40px] text-center italic font-black">
+          Découvrir nos newsletter
+        </h3>
+
+        <div class="mt-8">
+          <div class="">
+
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+              (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+              (beforeChange)="beforeChange($event)">
+              @for (news of allNews; track news.id) {
+              <div ngxSlickItem class="slide px-6 py-4">
+                <app-news-card [news]="news"></app-news-card>
+              </div>
+              }
+            </ngx-slick-carousel>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- News Letter -->
     <app-newsletter></app-newsletter>
   </div>
-
 
   <!-- bg elements -->
   <div class="absolute -top-12 -left-12 z-0">

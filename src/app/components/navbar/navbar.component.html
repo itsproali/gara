@@ -18,18 +18,18 @@
       <div *ngIf="link.children.length > 0" class="group relative cursor-pointer">
         <div class="flex items-center gap-1">
           <p class="text-[#757575] hover:text-black hover:opacity-100 duration-200">{{ link.label }}</p>
-          <div class="group-hover:rotate-180 duration-200">
+          <div class="group-hover:rotate-180 duration-200 group-hover:text-primary-light">
 
-            <svg class="duration-200 group-hover:text-primary-light" xmlns="http://www.w3.org/2000/svg" width="16"
-              height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-chevron-down">
               <path d="m6 9 6 6 6-6" />
             </svg>
           </div>
 
         </div>
         <div
-          class="z-50 absolute top-full left-0 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[272px] h-0 duration-200 transition-all">
+          class="z-50 absolute top-full left-0 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all">
           <a *ngFor="let child of link.children" [routerLink]="child.path"
             class="block w-full px-2 py-4 text-white hover:text-primary-light hover:bg-primary-dark duration-200"
             routerLinkActive="text-blue-500">{{
