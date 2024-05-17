@@ -11,4 +11,5 @@ import { INews } from '../../core/models/interfaces/INews';
 })
 export class NewsCardComponent {
   @Input() news!: INews;
+  @Input() size: 'small' | 'medium' | 'large' = 'large';
 }
