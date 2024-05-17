@@ -1,24 +1,24 @@
 <div class="min-h-screen">
   <div class="relative z-10">
-    <div class="container py-20">
+    <div class="py-12 lg:py-20 max-lg:px-2">
       <!-- Main Card -->
-      <div class="max-w-[1000px] mx-auto bg-[#FAFAFA] border-4 border-white w-full py-8 rounded-xl"
+      <div class="max-w-[1000px] mx-auto bg-[#FAFAFA] border-4 border-white w-full py-4 lg:py-8 rounded-xl"
         style="box-shadow: 0px 3px 6px #00000029">
-        <h3 class="text-[40px] text-center italic py-12">
+        <h3 class="text-xl lg:text-[40px] text-center italic py-4 lg:py-12">
           <strong>Interview</strong> de la semaine
         </h3>
         <div class="w-full h-[1px] bg-[#707070] opacity-25"></div>
 
-        <div class="px-8 pt-6 flex flex-col gap-8">
+        <div class="px-2 lg:px-8 pt-2 lg:pt-6 flex flex-col gap-4 lg:gap-8">
           <a routerLink="/media">
-            <h2 class="font-black text-5xl leading-[60px] pr-16">
+            <h2 class="font-black text-2xl lg:text-5xl lg:leading-[60px] lg:pr-16">
               Découvrez Samba Diop, le talentueux motion designer derrière le
               jeu Afro jungle
             </h2>
           </a>
 
-          <p class="text-lg">Samedi 20 Janvier 2024</p>
-          <div class="h-[480px] bg-[#BD0511] rounded-3xl relative">
+          <p class="text-base lg:text-lg">Samedi 20 Janvier 2024</p>
+          <div class="h-[280px] lg:h-[480px] bg-[#BD0511] rounded-3xl relative">
             <div class="absolute top-12 right-20 z-10">
               <p class="text-5xl text-[#F5F5F5] opacity-40 font-bold">LOGO</p>
             </div>
@@ -27,18 +27,18 @@
       </div>
 
       <!-- Bottom News Carousel -->
-      <div class="mt-28">
-        <h3 class="text-[40px] text-center italic font-black">
+      <div class="mt-20 lg:mt-28">
+        <h3 class="text-2xl lg:text-[40px] text-center italic font-black">
           Découvrir nos newsletter
         </h3>
 
-        <div class="mt-8">
+        <div class="mt-4 lg:mt-8">
           <div class="">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
               (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
               (beforeChange)="beforeChange($event)">
               @for (news of allNews; track news.id) {
-              <div ngxSlickItem class="slide px-6 py-4">
+              <div ngxSlickItem class="slide px-2 lg:px-6 py-4">
                 <app-news-card [news]="news"></app-news-card>
               </div>
               }
@@ -53,11 +53,11 @@
   </div>
 
   <!-- bg elements -->
-  <div class="absolute -top-12 -left-12 z-0">
-    <img src="assets/images/bg_1.svg" class="block w-[530px] h-[810px] object-cover" />
+  <div class="absolute top-10 lg:-top-12 -left-12 z-0">
+    <img src="assets/images/bg_1.svg" class="block w-[300px] lg:w-[530px] object-cover" />
   </div>
 
-  <div class="absolute top-[416px] right-0 z-0">
-    <img src="assets/images/bg_2.svg" class="block w-[432px] h-[720px] object-cover" />
+  <div class="absolute top-[350px] lg:top-[416px] right-0 z-0">
+    <img src="assets/images/bg_2.svg" class="block w-[280px] lg:w-[432px] object-cover" />
   </div>
 </div>

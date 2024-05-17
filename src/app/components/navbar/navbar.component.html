@@ -1,4 +1,10 @@
-<nav class="container flex items-center justify-between py-6 z-50">
+<nav class="container flex items-center justify-between py-6 z-50 relative px-2">
+
+
+  <!-- Mobile Menu Button -->
+  <button class="block md:hidden cursor-pointer">
+    <img src="assets/icons/menu.svg" alt="menu" width="36" class="block" />
+  </button>
 
   <!-- Logo -->
   <a [routerLink]="['/']" class="flex items-center gap-2">
@@ -7,7 +13,7 @@
 
 
   <!-- NavBar Links -->
-  <div class="flex items-center justify-center gap-x-[60px]">
+  <div class="hidden lg:flex items-center justify-center gap-x-[60px]">
     <div *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="text-black"
       class="text-[#757575] hover:text-black hover:opacity-100 duration-200">
       <!-- NavLink -->
@@ -42,7 +48,7 @@
 
   <!-- Language Switch -->
   <div
-    class="relative group h-[38px] w-[38px] overflow-visible hover:translate-y-1 duration-200 transition-all cursor-pointer">
+    class="hidden md:block relative group h-[38px] w-[38px] overflow-visible hover:translate-y-1 duration-200 transition-all cursor-pointer">
     <div class="h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white">
       <p class=" font-semibold">Fr</p>
     </div>

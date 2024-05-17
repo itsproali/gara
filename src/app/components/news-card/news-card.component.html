@@ -1,11 +1,11 @@
-<div class="bg-[#FAFAFA] border-4 border-white px-5 py-6 rounded-xl" style="box-shadow: 0px 3px 6px #00000029;">
+<div class="bg-[#FAFAFA] border-4 border-white px-3 lg:px-5 py-4 lg:py-6 rounded-xl" style="box-shadow: 0px 3px 6px #00000029;">
   <!-- <h5 class="text-3xl px-4 font-black">{{news.title}}</h5> -->
-  <h5 [ngClass]="{ 'text-3xl px-4 font-black' : true, 'text-xl' : size==='small' , 'text-2xl' :
-    size==='medium' , 'text-3xl' : size==='large' }">{{news.title}}</h5>
+  <h5 [ngClass]="{ 'text-2xl lg:text-3xl px-2 lg:px-4 font-black' : true, 'text-lg lg:text-xl' : size==='small' , 'text-xl lg:text-2xl' :
+    size==='medium' , 'text-2xl lg:text-3xl' : size==='large' }">{{news.title}}</h5>
   <div class="w-full h-[1px] bg-[#707070] opacity-25 mb-4 mt-6"></div>
-  <div class="flex items-center justify-between px-4">
+  <div class="flex items-center justify-between px-2 lg:px-4">
 
-    <p class="text-lg">{{news.date}}</p>
+    <p class="text-base lg:text-lg">{{news.date}}</p>
 
     <img src="assets/icons/arrow_forward.svg" alt="arrow" width="8" height="8">
   </div>
