@@ -13,4 +13,10 @@ import { menuLinks } from '../../core/constant/menuLinks';
 })
 export class NavbarComponent {
   navLinks: INavLink[] = menuLinks;
+  isOpen = false;
+
+  toggleSidenav() {
+    this.isOpen = !this.isOpen;
+    console.log('toggleSidenav', this.isOpen);
+  }
 }

@@ -1,60 +1,179 @@
-<nav class="container flex items-center justify-between py-6 z-50 relative px-2">
+<div class="relative">
+  <nav
+    class="container flex items-center justify-between py-6 z-50 relative px-2"
+  >
+    <!-- Mobile Menu Button -->
+    <button class="block md:hidden cursor-pointer" (click)="toggleSidenav()">
+      <img src="assets/icons/menu.svg" alt="menu" width="36" class="block" />
+    </button>
 
+    <!-- Logo -->
+    <a [routerLink]="['/']" class="flex items-center gap-2">
+      <p class="text-3xl font-bold text-primary">Logo</p>
+    </a>
 
-  <!-- Mobile Menu Button -->
-  <button class="block md:hidden cursor-pointer">
-    <img src="assets/icons/menu.svg" alt="menu" width="36" class="block" />
-  </button>
+    <!-- NavBar Links -->
+    <div class="hidden lg:flex items-center justify-center gap-x-[60px]">
+      <div
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        routerLinkActive="text-black"
+        class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
+      >
+        <!-- NavLink -->
+        <a
+          *ngIf="link.children?.length === 0"
+          class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
+          [routerLink]="link.path"
+          routerLinkActive="text-blue-500"
+          >{{ link.label }}</a
+        >
 
-  <!-- Logo -->
-  <a [routerLink]="['/']" class="flex items-center gap-2">
-    <p class="text-3xl font-bold text-primary">Logo</p>
-  </a>
-
-
-  <!-- NavBar Links -->
-  <div class="hidden lg:flex items-center justify-center gap-x-[60px]">
-    <div *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="text-black"
-      class="text-[#757575] hover:text-black hover:opacity-100 duration-200">
-      <!-- NavLink -->
-      <a *ngIf="link.children?.length === 0" class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
-        [routerLink]="link.path" routerLinkActive="text-blue-500">{{ link.label }}</a>
-
-      <!-- Drop Down -->
-      <div *ngIf="link.children.length > 0" class="group relative cursor-pointer">
-        <div class="flex items-center gap-1">
-          <p class="text-[#757575] hover:text-black hover:opacity-100 duration-200">{{ link.label }}</p>
-          <div class="group-hover:rotate-180 duration-200 group-hover:text-primary-light">
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-down">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </div>
-
-        </div>
+        <!-- Drop Down -->
         <div
-          class="z-50 absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all">
-          <a *ngFor="let child of link.children" [routerLink]="child.path"
-            class="block w-full px-2 py-4 text-white hover:text-primary-light hover:bg-primary-dark duration-200"
-            routerLinkActive="text-blue-500">{{
-            child.label }}</a>
+          *ngIf="link.children.length > 0"
+          class="group relative cursor-pointer"
+        >
+          <div class="flex items-center gap-1">
+            <p
+              class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
+            >
+              {{ link.label }}
+            </p>
+            <div
+              class="group-hover:rotate-180 duration-200 group-hover:text-primary-light"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="z-50 absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all"
+          >
+            <a
+              *ngFor="let child of link.children"
+              [routerLink]="child.path"
+              class="block w-full px-2 py-4 text-white hover:text-primary-light hover:bg-primary-dark duration-200"
+              routerLinkActive="text-blue-500"
+              >{{ child.label }}</a
+            >
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <!-- Language Switch -->
-  <div
-    class="hidden md:block relative group h-[38px] w-[38px] overflow-visible hover:translate-y-1 duration-200 transition-all cursor-pointer">
-    <div class="h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white">
-      <p class=" font-semibold">Fr</p>
-    </div>
+    <!-- Language Switch -->
     <div
-      class="z-50 h-0 duration-200 aboslute top-full left-0 group-hover:h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white">
-      <p class="hidden group-hover:block">En</p>
+      class="hidden md:block relative group h-[38px] w-[38px] overflow-visible hover:translate-y-1 duration-200 transition-all cursor-pointer"
+    >
+      <div
+        class="h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white"
+      >
+        <p class="font-semibold">Fr</p>
+      </div>
+      <div
+        class="z-50 h-0 duration-200 aboslute top-full left-0 group-hover:h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white"
+      >
+        <p class="hidden group-hover:block">En</p>
+      </div>
+    </div>
+  </nav>
+
+  <!---------------------- Mobile Side NavBar ----------------------->
+  <div
+    class="w-full h-screen bg-black/80 fixed top-0 duration-200 transition-all"
+    [ngClass]="{ 'opacity-100 z-[99] ': isOpen, 'opacity-0 -z-40': !isOpen }"
+  >
+    <div
+      class="w-[320px] bg-[#EFEEE9] flex flex-col items-start px-6 pt-8 h-full gap-6 duration-300 transition-all"
+      [ngClass]="{ 'translate-x-0': isOpen, '-translate-x-full': !isOpen }"
+    >
+      <!-- Close Button -->
+      <button class="mb-6" (click)="toggleSidenav()">
+        <img src="assets/icons/close.svg" alt="close" width="24" />
+      </button>
+
+      <div
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        routerLinkActive="text-black"
+        class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
+      >
+        <a
+          *ngIf="link.children?.length === 0"
+          class="text-xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
+          [routerLink]="link.path"
+          routerLinkActive="text-black"
+          >{{ link.label }}</a
+        >
+
+        <div
+          *ngIf="link.children.length > 0"
+          class="group relative cursor-pointer"
+        >
+          <div class="flex items-center gap-4">
+            <p
+              class="text-xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
+            >
+              {{ link.label }}
+            </p>
+            <div
+              class="group-hover:rotate-180 duration-200 group-hover:text-black"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-start overflow-hidden group-hover:h-[180px] h-0 duration-200 transition-all ml-4 group-hover:mt-4"
+          >
+            <a
+              *ngFor="let child of link.children"
+              [routerLink]="child.path"
+              class="block w-full p-3 text-[#757575] hover:text-black duration-200 text-sm"
+              routerLinkActive="text-black"
+              >{{ child.label }}</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 text-white">
+        <p
+          class="font-semibold bg-primary-dark h-[40px] w-[40px] grid place-items-center cursor-pointer"
+        >
+          Fr
+        </p>
+        <p
+          class="font-semibold bg-[#B7B5AB] h-[40px] w-[40px] grid place-items-center cursor-pointer"
+        >
+          En
+        </p>
+      </div>
     </div>
   </div>
-</nav>
+</div>
