@@ -1,7 +1,54 @@
 <footer class="bg-[#28293C]">
   <div class="container py-20">
     <a [routerLink]="['/']" class="flex items-center gap-2">
-      <p class="text-3xl font-bold text-primary-light">Logo</p>
+      <p class="text-4xl font-bold text-primary-light">Logo</p>
     </a>
+
+    <div class="grid grid-cols-2 gap-x-8 w-[40%] mt-[56px] ml-8">
+      <!-- 1st column -->
+      <div class="flex flex-col items-start gap-6">
+        <div *ngFor="let menuLink of menuLinks.slice(0, 2)">
+          <a *ngIf="menuLink.children?.length === 0" [routerLink]="menuLink.path"
+            class="text-lg text-[#D9D9D9] opacity-75 hover:opacity-100 duration-20 cursor-pointer hover:text-primary-light transition-all hover:text-[22px]">{{
+            menuLink.label }}</a>
+
+          <div *ngIf="menuLink.children.length > 0" class="relative cursor-pointer">
+            <div class="flex items-center gap-6">
+              <p
+                class="text-lg text-[#D9D9D9] opacity-75 hover:opacity-100 duration-20 cursor-pointer transition-all hover:text-primary-light hover:text-[22px]">
+                {{ menuLink.label }}
+              </p>
+              <div class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-down">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex flex-col ml-4 items-start gap-5 mt-8">
+              <a *ngFor="let child of menuLink.children" [routerLink]="child.path"
+                class="text-xs text-[#D9D9D9] opacity-75 hover:opacity-100 duration-20 cursor-pointer transition-all hover:text-primary-light hover:text-sm">{{
+                child.label }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2nd Column -->
+      <div class="flex flex-col items-start gap-6">
+        <a *ngFor="let menuLink of menuLinks.slice(2, menuLinks.length)" [routerLink]="menuLink.path"
+          class="text-lg text-[#D9D9D9] opacity-75 hover:opacity-100 duration-20 cursor-pointer transition-all hover:text-primary-light hover:text-[22px]">{{
+          menuLink.label }}</a>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <div>
+        <p class="text-[#D9D9D9] text-sm text-right">Gara ©️ Copyright 2024</p>
+        <p class="text-lg text-white text-right mt-2">Website Designed and built with ❤️ in Africa</p>
+      </div>
+    </div>
   </div>
 </footer>

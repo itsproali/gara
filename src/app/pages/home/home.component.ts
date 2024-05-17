@@ -5,11 +5,13 @@ import { NewsCardComponent } from '../../components/news-card/news-card.componen
 import { INews } from '../../core/models/interfaces/INews';
 import { allNews } from '../../core/constant/allNews';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
+    RouterLink,
     CommonModule,
     NewsletterComponent,
     NewsCardComponent,
