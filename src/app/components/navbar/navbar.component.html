@@ -29,7 +29,7 @@
 
         </div>
         <div
-          class="z-50 absolute top-full left-0 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all">
+          class="z-50 absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all">
           <a *ngFor="let child of link.children" [routerLink]="child.path"
             class="block w-full px-2 py-4 text-white hover:text-primary-light hover:bg-primary-dark duration-200"
             routerLinkActive="text-blue-500">{{
