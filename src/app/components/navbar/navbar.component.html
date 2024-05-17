@@ -1,4 +1,4 @@
-<nav class="container flex items-center justify-between py-4">
+<nav class="container flex items-center justify-between py-4 z-50">
 
   <!-- Logo -->
   <a [routerLink]="['/']" class="flex items-center gap-2">
@@ -8,7 +8,7 @@
 
   <!-- NavBar Links -->
   <div class="flex items-center justify-center gap-x-[60px]">
-    <div *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="text-blue-500"
+    <div *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="text-black"
       class="text-[#757575] hover:text-black hover:opacity-100 duration-200">
       <!-- NavLink -->
       <a *ngIf="link.children?.length === 0" class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
@@ -29,7 +29,7 @@
 
         </div>
         <div
-          class="absolute top-full left-0 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[272px] h-0 duration-200 transition-all">
+          class="z-50 absolute top-full left-0 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[272px] h-0 duration-200 transition-all">
           <a *ngFor="let child of link.children" [routerLink]="child.path"
             class="block w-full px-2 py-4 text-white hover:text-primary-light hover:bg-primary-dark duration-200"
             routerLinkActive="text-blue-500">{{
@@ -47,7 +47,7 @@
       <p class=" font-semibold">Fr</p>
     </div>
     <div
-      class="h-0 duration-200 aboslute top-full left-0 group-hover:h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white">
+      class="z-50 h-0 duration-200 aboslute top-full left-0 group-hover:h-[38px] w-[38px] bg-[#B7B5AB] group-hover:bg-primary grid place-items-center text-white">
       <p class="hidden group-hover:block">En</p>
     </div>
   </div>

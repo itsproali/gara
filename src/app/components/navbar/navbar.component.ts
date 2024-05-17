@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NavLink } from '../../core/models/classes/NavLink';
+import { INavLink } from '../../core/models/interfaces/INavLink';
 
 @Component({
   selector: 'app-navbar',
@@ -11,15 +11,15 @@ import { NavLink } from '../../core/models/classes/NavLink';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  navLinks: NavLink[];
+  navLinks: INavLink[];
 
   constructor() {
     this.navLinks = [
-      { label: 'Éditeurs', path: '/', children: [] },
+      { label: 'Éditeurs', path: '/editor', children: [] },
       {
         label: 'Partenaires',
         children: [
-          { label: 'Télécoms et Agrégateurs', path: '/' },
+          { label: 'Télécoms et Agrégateurs', path: '/par' },
           {
             label: 'Institutionnels',
             path: '/',
@@ -46,7 +46,7 @@ export class NavbarComponent {
       },
       {
         label: 'Média',
-        path: '/',
+        path: '/media',
         children: [],
       },
       {
