@@ -1,6 +1,6 @@
 <div class="relative">
   <nav
-    class="container flex items-center justify-between py-6 z-50 relative px-2"
+    class="container flex items-center justify-between py-6 z-50 relative max-lg:px-4"
   >
     <!-- Mobile Menu Button -->
     <button class="block md:hidden cursor-pointer" (click)="toggleSidenav()">
@@ -8,8 +8,13 @@
     </button>
 
     <!-- Logo -->
-    <a [routerLink]="['/']" class="flex items-center gap-2">
-      <p class="text-3xl font-bold text-primary">Logo</p>
+    <a
+      [routerLink]="['/']"
+      class="flex items-center gap-2"
+      (mouseover)="changeLogoPath(true)"
+      (mouseout)="changeLogoPath(false)"
+    >
+      <img [src]="logoPath" alt="logo" />
     </a>
 
     <!-- NavBar Links -->
@@ -60,7 +65,7 @@
             </div>
           </div>
           <div
-            class="z-50 absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[250px] h-0 duration-200 transition-all"
+            class="z-50 absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[180px] bg-primary shadow-md rounded-md flex flex-col items-center text-center overflow-hidden group-hover:h-[272px] h-0 duration-200 transition-all"
           >
             <a
               *ngFor="let child of link.children"
@@ -123,14 +128,15 @@
           *ngIf="link.children.length > 0"
           class="group relative cursor-pointer"
         >
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4" (click)="toggleSubMenu()">
             <p
               class="text-xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
             >
               {{ link.label }}
             </p>
             <div
-              class="group-hover:rotate-180 duration-200 group-hover:text-black"
+              class="duration-200 group-hover:text-black"
+              [ngClass]="[subMenuOpen ? 'rotate-180' : '']"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +155,8 @@
             </div>
           </div>
           <div
-            class="flex flex-col items-start overflow-hidden group-hover:h-[180px] h-0 duration-200 transition-all ml-4 group-hover:mt-4"
+            class="flex flex-col items-start overflow-hidden duration-200 transition-all ml-4"
+            [ngClass]="{ 'h-[180px] mt-4': subMenuOpen, 'h-0': !subMenuOpen }"
           >
             <a
               *ngFor="let child of link.children"

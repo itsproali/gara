@@ -3,12 +3,65 @@
 @tailwind utilities; /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-  font-family: "AdobeClean";
-  src: url("./assets/font/AdobeClean.otf");
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Thin.otf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Italic.otf");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-MediumItalic.otf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-Black.otf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Gopher";
+  src: url("./assets/font/Gopher-BlackItalic.otf");
+  font-weight: 900;
+  font-style: italic;
 }
 
 body {
-  font-family: "AdobeClean", sans-serif;
+  font-family: "Gopher", sans-serif;
   background-color: #efeee9;
   min-height: 100vh;
 }

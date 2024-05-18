@@ -13,10 +13,22 @@ import { menuLinks } from '../../core/constant/menuLinks';
 })
 export class NavbarComponent {
   navLinks: INavLink[] = menuLinks;
-  isOpen = false;
+  logoPath: string = 'assets/logo/nav_logo.svg';
 
+  changeLogoPath(isHovered: boolean) {
+    this.logoPath = isHovered
+      ? 'assets/logo/nav_logo_green.svg'
+      : 'assets/logo/nav_logo.svg';
+  }
+
+  isOpen = false;
   toggleSidenav() {
     this.isOpen = !this.isOpen;
     console.log('toggleSidenav', this.isOpen);
+  }
+
+  subMenuOpen = false;
+  toggleSubMenu() {
+    this.subMenuOpen = !this.subMenuOpen;
   }
 }
