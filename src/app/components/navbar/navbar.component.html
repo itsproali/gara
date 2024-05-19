@@ -1,6 +1,6 @@
 <div class="relative">
   <nav
-    class="container flex items-center justify-between py-6 z-50 relative max-lg:px-4"
+    class="container flex items-center justify-between py-6 z-50 relative px-4"
   >
     <!-- Mobile Menu Button -->
     <button class="block md:hidden cursor-pointer" (click)="toggleSidenav()">
@@ -17,8 +17,12 @@
       <img [src]="logoPath" alt="logo" />
     </a>
 
+    <div class="w-4"></div>
+
     <!-- NavBar Links -->
-    <div class="hidden lg:flex items-center justify-center gap-x-[60px]">
+    <div
+      class="hidden lg:flex items-center justify-center gap-x-[40px] xl:gap-x-[60px]"
+    >
       <div
         *ngFor="let link of navLinks"
         [routerLink]="link.path"
