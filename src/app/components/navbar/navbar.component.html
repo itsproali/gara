@@ -102,7 +102,7 @@
     [ngClass]="{ 'opacity-100 z-[99] ': isOpen, 'opacity-0 -z-40': !isOpen }"
   >
     <div
-      class="w-[320px] bg-[#EFEEE9] flex flex-col items-start px-6 pt-8 h-full gap-6 duration-300 transition-all"
+      class="w-[100%] bg-[#EFEEE9] flex flex-col items-start px-6 pt-8 h-full gap-6 duration-300 transition-all"
       [ngClass]="{ 'translate-x-0': isOpen, '-translate-x-full': !isOpen }"
     >
       <!-- Close Button -->
@@ -110,15 +110,10 @@
         <img src="assets/icons/close.svg" alt="close" width="24" />
       </button>
 
-      <div
-        *ngFor="let link of navLinks"
-        [routerLink]="link.path"
-        routerLinkActive="text-black"
-        class="text-[#757575] hover:text-black hover:opacity-100 duration-200"
-      >
+      <div *ngFor="let link of navLinks" class="my-2">
         <a
           *ngIf="link.children?.length === 0"
-          class="text-xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
+          class="text-3xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
           [routerLink]="link.path"
           routerLinkActive="text-black"
           >{{ link.label }}</a
@@ -130,7 +125,7 @@
         >
           <div class="flex items-center gap-4" (click)="toggleSubMenu()">
             <p
-              class="text-xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
+              class="text-3xl text-[#757575] hover:text-black hover:opacity-100 duration-200"
             >
               {{ link.label }}
             </p>
@@ -140,8 +135,8 @@
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -161,7 +156,7 @@
             <a
               *ngFor="let child of link.children"
               [routerLink]="child.path"
-              class="block w-full p-3 text-[#757575] hover:text-black duration-200 text-sm"
+              class="block w-full p-3 text-[#757575] hover:text-black duration-200"
               routerLinkActive="text-black"
               >{{ child.label }}</a
             >
