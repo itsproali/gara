@@ -28,7 +28,9 @@ export class HomeComponent {
     arrows: false,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
+    centerMode: true,
+    variableWidth: true,
     responsive: [
       {
         breakpoint: 1200,
@@ -45,7 +47,7 @@ export class HomeComponent {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
